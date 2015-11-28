@@ -10,29 +10,15 @@
     "128": "icons/icon128.png"
   },
   "default_locale": "en",
-  "background": {
-    "page": "src/bg/background.html",
-    "persistent": true
-  },
   "options_page": "src/options_custom/index.html",
   "browser_action": {
    "default_icon": "icons/icon19.png",
-   "default_popup": "browser_action/popup.html"
+   "default_popup": "src/popup.html"
   },
   "permissions": [
     "activeTab",
     "clipboardWrite",
     "contextMenus",
     "http://*/*"
-  ],
-  "content_scripts": [
-    {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "src/inject/inject.js"
-      ]
-    }
   ]
 }
