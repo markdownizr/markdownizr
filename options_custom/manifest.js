@@ -1,134 +1,56 @@
 // SAMPLE
 this.manifest = {
-    "name": "My Extension",
+    "name": "Markdownizr",
     "icon": "icon.png",
     "settings": [
         {
-            "tab": i18n.get("information"),
-            "group": i18n.get("login"),
-            "name": "username",
+            "tab": "Filters",
+            "group": "Strip Elements",
+            "name": "strip",
             "type": "text",
-            "label": i18n.get("username"),
-            "text": i18n.get("x-characters")
+            "text": "script, nav, p, ..."
         },
         {
-            "tab": i18n.get("information"),
-            "group": i18n.get("login"),
-            "name": "password",
+            "tab": "Filters",
+            "group": "Strip Elements",
+            "name": "strip_desc",
+            "type": "description",
+            "text": "These elements will be removed from the generated markdown, but their content will be kept."
+        },
+        {
+            "tab": "Filters",
+            "group": "Delete Elements",
+            "name": "delete",
             "type": "text",
-            "label": i18n.get("password"),
-            "text": i18n.get("x-characters-pw"),
+            "text": "script, nav, p, ..."
+        },
+        {
+            "tab": "Filters",
+            "group": "Delete Elements",
+            "name": "deletech_desc",
+            "type": "description",
+            "text": "These elements will **and their contents** will be removed from the generated markdown."
+        },
+        {
+            "tab": "Pro Features",
+            "group": "Readability",
+            "name": "enable_readability",
+            "type": "checkbox",
+        },
+        {
+            "tab": "Pro Features",
+            "group": "Readability",
+            "name": "readability_api_key",
+            "type": "text",
+            "text": "XXXXXXXXXXXXXXXX",
             "masked": true
         },
         {
-            "tab": i18n.get("information"),
-            "group": i18n.get("login"),
-            "name": "myDescription",
+            "tab": "Pro Features",
+            "group": "Readability",
+            "name": "readability_desc",
             "type": "description",
-            "text": i18n.get("description")
-        },
-        {
-            "tab": i18n.get("information"),
-            "group": i18n.get("logout"),
-            "name": "myCheckbox",
-            "type": "checkbox",
-            "label": i18n.get("enable")
-        },
-        {
-            "tab": i18n.get("information"),
-            "group": i18n.get("logout"),
-            "name": "myButton",
-            "type": "button",
-            "label": i18n.get("disconnect"),
-            "text": i18n.get("logout")
-        },
-        {
-            "tab": "Details",
-            "group": "Sound",
-            "name": "noti_volume",
-            "type": "slider",
-            "label": "Notification volume:",
-            "max": 1,
-            "min": 0,
-            "step": 0.01,
-            "display": true,
-            "displayModifier": function (value) {
-                return (value * 100).floor() + "%";
-            }
-        },
-        {
-            "tab": "Details",
-            "group": "Sound",
-            "name": "sound_volume",
-            "type": "slider",
-            "label": "Sound volume:",
-            "max": 100,
-            "min": 0,
-            "step": 1,
-            "display": true,
-            "displayModifier": function (value) {
-                return value + "%";
-            }
-        },
-        {
-            "tab": "Details",
-            "group": "Food",
-            "name": "myPopupButton",
-            "type": "popupButton",
-            "label": "Soup 1 should be:",
-            "options": {
-                "groups": [
-                    "Hot", "Cold",
-                ],
-                "values": [
-                    {
-                        "value": "hot",
-                        "text": "Very hot",
-                        "group": "Hot",
-                    },
-                    {
-                        "value": "Medium",
-                        "group": 1,
-                    },
-                    {
-                        "value": "Cold",
-                        "group": 2,
-                    },
-                    ["Non-existing"]
-                ],
-            },
-        },
-        {
-            "tab": "Details",
-            "group": "Food",
-            "name": "myListBox",
-            "type": "listBox",
-            "label": "Soup 2 should be:",
-            "options": [
-                ["hot", "Hot and yummy"],
-                ["cold"]
-            ]
-        },
-        {
-            "tab": "Details",
-            "group": "Food",
-            "name": "myRadioButtons",
-            "type": "radioButtons",
-            "label": "Soup 3 should be:",
-            "options": [
-                ["hot", "Hot and yummy"],
-                ["cold"]
-            ]
+            "text": "Enter your Parser API Key from <a href='https://www.readability.com/developers/api'>Readability</a>."
         }
-    ],
-    "alignment": [
-        [
-            "username",
-            "password"
-        ],
-        [
-            "noti_volume",
-            "sound_volume"
-        ]
     ]
 };
