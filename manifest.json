@@ -28,7 +28,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.google.com/*"
+        "<all_urls>"
       ],
       "js": [
         "src/inject/inject.js"
