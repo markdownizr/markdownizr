@@ -15,12 +15,12 @@
     "persistent": true
   },
   "options_page": "src/options_custom/index.html",
-  "page_action": {
-    "default_icon": "icons/icon19.png",
-    "default_title": "page action demo",
-    "default_popup": "src/page_action/page_action.html"
+  "browser_action": {
+   "default_icon": "icons/icon19.png",
+   "default_popup": "browser_action/popup.html"
   },
   "permissions": [
+    "activeTab",
     "clipboardWrite",
     "contextMenus",
     "http://*/*"
