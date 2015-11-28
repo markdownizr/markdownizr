@@ -15,7 +15,19 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if (request.message === "result_exists") {
       // parse incoming html for markdown
-      var markdown = toMarkdown(request.content);
+      // request.content
+      var markdown = toMarkdown(request.content, {
+        // filter out stuff
+        converters: [{
+          // pull inner content out of common wrapper elements
+          filter: ['div', 'span', 'section', 'article', 'header'],
+          replacement: function (innerHTML) { return innerHTML }
+        }, {
+          // don't include these in the final markdown
+          filter: ['script', 'form', 'nav'],
+          replacement: function () { return '' }
+        }]
+      });
       // create a ghost input to hold the fresh markdown
       const textarea = document.createElement('textarea');
       textarea.style.position = 'fixed';
