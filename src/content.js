@@ -21,12 +21,25 @@ chrome.runtime.onMessage.addListener(
             }
 
             if (html) {
-              console.log(html);
+              console.log();
+              var markdown = toMarkdown(html.innerHTML)
+
+              // create a ghost input to hold the markdown and copy it
+              const textarea = document.createElement('textarea');
+              textarea.style.position = 'fixed';
+              textarea.style.opacity = 0;
+              textarea.value = markdown;
+              document.body.appendChild(textarea);
+              textarea.select();
+              document.execCommand('Copy');
+              document.body.removeChild(textarea);
+
               // send a message to background.js
               chrome.runtime.sendMessage({
                   "message": "selection_exists",
                   "url": page_location,
-                  "content": html
+                  "content": html,
+                  "markdown": markdown
               });
             } else {
               console.log("Oops - something ain't right....");

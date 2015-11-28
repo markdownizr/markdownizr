@@ -5,16 +5,13 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     var activeTab = tabs[0];
     chrome.tabs.sendMessage(activeTab.id, {"message": "clicked_browser_action"});
   });
-  // find the background html page
-  var viewTabUrl = chrome.extension.getURL('src/background.html');
 });
 
 // check the message from content.js
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.message === "selection_exists" ) {
-      // chrome.tabs.create({"url": request.url});
-      chrome.tabs.create({url: chrome.extension.getURL('src/background.html')});
+      // Do Something
     }
   }
 );

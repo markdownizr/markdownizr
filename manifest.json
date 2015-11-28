@@ -13,6 +13,8 @@
   "options_page": "src/options_custom/index.html",
   "background": {
     "scripts": [
+      "js/jquery/jquery.min.js",
+      "bower_components/to-markdown/dist/to-markdown.js",
       "src/background.js"
     ],
     "pages": ["src/background.html"],
@@ -23,7 +25,11 @@
       "matches": [
         "<all_urls>"
       ],
-      "js": ["js/jquery/jquery.min.js", "src/content.js"]
+      "js": [
+        "js/jquery/jquery.min.js",
+        "bower_components/to-markdown/dist/to-markdown.js",
+        "src/content.js"
+      ]
     }
   ],
   "browser_action": {
