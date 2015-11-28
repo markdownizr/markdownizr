@@ -13,7 +13,7 @@
   "options_page": "options_custom/index.html",
   "background": {
     "scripts": [
-      "js/jquery/jquery.min.js",
+      "bower_components/jquery/dist/jquery.min.js",
       "bower_components/to-markdown/dist/to-markdown.js",
       "background.js"
     ],
@@ -26,7 +26,7 @@
         "<all_urls>"
       ],
       "js": [
-        "js/jquery/jquery.min.js",
+        "bower_components/jquery/dist/jquery.min.js",
         "bower_components/to-markdown/dist/to-markdown.js",
         "content.js"
       ]
