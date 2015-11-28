@@ -15,6 +15,7 @@
     "scripts": [
       "bower_components/jquery/dist/jquery.min.js",
       "bower_components/to-markdown/dist/to-markdown.js",
+      "options_custom/lib/store.js",
       "background.js"
     ],
     "pages": ["background.html"],

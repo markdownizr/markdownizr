@@ -1,4 +1,3 @@
-// SAMPLE
 this.manifest = {
     "name": "Markdownizr",
     "icon": "icon.png",
@@ -6,7 +5,7 @@ this.manifest = {
         {
             "tab": "Filters",
             "group": "Strip Elements",
-            "name": "strip",
+            "name": "strip_elements",
             "type": "text",
             "text": "script, nav, p, ..."
         },
@@ -20,14 +19,14 @@ this.manifest = {
         {
             "tab": "Filters",
             "group": "Delete Elements",
-            "name": "delete",
+            "name": "delete_elements",
             "type": "text",
             "text": "script, nav, p, ..."
         },
         {
             "tab": "Filters",
             "group": "Delete Elements",
-            "name": "deletech_desc",
+            "name": "delete_desc",
             "type": "description",
             "text": "These elements will **and their contents** will be removed from the generated markdown."
         },

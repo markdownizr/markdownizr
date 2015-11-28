@@ -1,3 +1,17 @@
+// localStorage.clear(); // for debugging
+
+// instantiate default settings
+var settings = new Store("settings", {
+  "strip_elements": "div, span, small, aside, section, article, header, time, address",
+  "delete_elements": "script, noscript, canvas, embed, object, param, svg, source, form, nav, iframe, footer, hgroup",
+  "enable_readability": true,
+  "readability_api_key": ""
+});
+
+// create easy vars to use in the magic below
+var stripped_elements = settings.get("strip_elements").split(', ');
+var deleted_elements = settings.get("delete_elements").split(', ');
+
 function callTab(tab) {
   // Send a message to the active tab
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -19,12 +33,12 @@ chrome.runtime.onMessage.addListener(
       var markdown = toMarkdown(request.content, {
         // filter out stuff
         converters: [{
-          // pull inner content out of common wrapper elements
-          filter: ['div', 'span', 'small', 'aside', 'section', 'article', 'header', 'time', 'address'],
+          // grab the settings
+          filter: stripped_elements,
           replacement: function (innerHTML) { return innerHTML }
         }, {
           // don't include these in the final markdown
-          filter: ['script', 'noscript', 'canvas', 'embed', 'object', 'param', 'svg', 'source', 'form', 'nav', 'iframe', 'footer', 'hgroup'],
+          filter: deleted_elements,
           replacement: function () { return '' }
         }]
       });
