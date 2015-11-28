@@ -12,7 +12,11 @@
   "default_locale": "en",
   "options_page": "src/options_custom/index.html",
   "background": {
-    "scripts": ["src/background.js"]
+    "scripts": [
+      "src/background.js"
+    ],
+    "pages": ["src/background.html"],
+    "persistent": false
   },
   "content_scripts": [
     {

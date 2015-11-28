@@ -31,9 +31,6 @@ chrome.runtime.onMessage.addListener(
             } else {
               console.log("Oops - something ain't right....");
             };
-
-
-
         }
     }
 );
