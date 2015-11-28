@@ -30,7 +30,11 @@ chrome.runtime.onMessage.addListener(
           "content": html.innerHTML
         });
       } else {
-        console.log("Oops - something ain't right....");
+        chrome.runtime.sendMessage({
+          "message": "no_result",
+          "url": page_location,
+          "content": html.innerHTML
+        });
       };
 
     }

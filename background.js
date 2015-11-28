@@ -30,6 +30,8 @@ chrome.runtime.onMessage.addListener(
       document.execCommand('Copy');
       // cover the tracks
       document.body.removeChild(textarea);
+    } else {
+      alert("Oops! No content received.");
     }
   }
 );
