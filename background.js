@@ -20,11 +20,11 @@ chrome.runtime.onMessage.addListener(
         // filter out stuff
         converters: [{
           // pull inner content out of common wrapper elements
-          filter: ['div', 'span', 'section', 'article', 'header'],
+          filter: ['div', 'span', 'small', 'aside', 'section', 'article', 'header', 'time', 'address'],
           replacement: function (innerHTML) { return innerHTML }
         }, {
           // don't include these in the final markdown
-          filter: ['script', 'form', 'nav'],
+          filter: ['script', 'noscript', 'canvas', 'embed', 'object', 'param', 'svg', 'source', 'form', 'nav', 'iframe', 'footer', 'hgroup'],
           replacement: function () { return '' }
         }]
       });
