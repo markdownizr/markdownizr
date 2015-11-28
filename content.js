@@ -12,13 +12,16 @@ chrome.runtime.onMessage.addListener(
       var html = document.createElement('html');
       // check if user has highlighted any content
       if (selection.type === "Range") {
-          // get the highlighted content's source
-          var range = selection.getRangeAt(0);
-          // stash it
-          html.appendChild(range.cloneContents());
-        } else {
+        // get the highlighted content's source
+        var range = selection.getRangeAt(0);
+        // stash it
+        html.appendChild(range.cloneContents());
+      } else {
         // stash the entire <body>
-        html.appendChild(body[0]);
+        range = document.createRange();
+        range.selectNode(document.getElementsByTagName("body").item(0));
+        documentFragment = range.cloneContents();
+        html.appendChild(documentFragment);
       }
 
       if (html) {
