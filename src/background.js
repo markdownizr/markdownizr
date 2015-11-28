@@ -12,7 +12,6 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.message === "selection_exists" ) {
       // chrome.tabs.create({"url": request.url});
-      // console.log(request.viewsource);
     }
   }
 );
