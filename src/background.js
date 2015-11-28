@@ -7,11 +7,12 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   });
 });
 
-// This block is new!
+// check the message from content.js
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    if( request.message === "open_new_tab" ) {
-      chrome.tabs.create({"url": request.url});
+    if( request.message === "selection_exists" ) {
+      // chrome.tabs.create({"url": request.url});
+      // console.log(request.viewsource);
     }
   }
 );

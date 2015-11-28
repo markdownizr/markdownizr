@@ -1,12 +1,26 @@
 chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    if( request.message === "clicked_browser_action" ) {
-      var firstHref = $("a[href^='http']").eq(0).attr("href");
+    function(request, sender, sendResponse) {
+        if (request.message === "clicked_browser_action") {
 
-      console.log(firstHref);
+            // get selection
+            var selection = window.getSelection();
+            // check if content is selected
+            if (window.getSelection().type === "Range") {
+                var range = selection.getRangeAt(0);
+                var html = document.createElement('html');
+                html.appendChild(range.cloneContents());
+                console.log(html);
+            } else if (window.getSelection().type === "Caret") {
+              var html = $('body');
+            } else {
+              console.log("Oops, no selection!!!")
+            }
 
-      // This line is new!
-      chrome.runtime.sendMessage({"message": "open_new_tab", "url": firstHref});
+            // send object to background.js
+            chrome.runtime.sendMessage({
+                "message": "selection_exists",
+                "url": page_location
+            });
+        }
     }
-  }
 );
