@@ -29,9 +29,9 @@ $(document).ready(function() {
   // watch the user as they scroll... O.o
   $(window).scroll(function() {
     // make sure unicorn hasn't been spotted yet
-    if (unicount === 0) {
+    if ($('#demo').visible(true)) {
       // check if demo section is visible
-      if ($('#demo').visible(true)) {
+      if (unicount === 0) {
         // hold a sec and start the show
         setTimeout(animateSecret, 4000);
         // bump the counter
