@@ -123,6 +123,11 @@ h1 {
   font-size: 2em;
   display: inline-block;
   margin-left: .5em;
+  visibility: hidden;
+}
+
+#brand.needed {
+  visibility: visible;
 }
 
 #brand i {

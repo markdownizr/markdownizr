@@ -26,19 +26,6 @@ $(document).ready(function() {
           right: "-100%"
       }, 5000, 'swing' )
   }
-  // watch the user as they scroll... O.o
-  $(window).scroll(function() {
-    // make sure unicorn hasn't been spotted yet
-    if ($('#demo').visible(true)) {
-      // check if demo section is visible
-      if (unicount === 0) {
-        // hold a sec and start the show
-        setTimeout(animateSecret, 4000);
-        // bump the counter
-        unicount += 1;
-      }
-    }
-  });
 
 // nice nav scrolling
   $('#navbar a').on('click', function(e) {
@@ -53,5 +40,27 @@ $(document).ready(function() {
   });
 
 
+// watch the user as they scroll... O.o
+  $(window).scroll(function() {
+
+    // make sure unicorn hasn't been spotted yet
+    if ($('#demo').visible(true)) {
+      // check if demo section is visible
+      if (unicount === 0) {
+        // hold a sec and start the show
+        setTimeout(animateSecret, 4000);
+        // bump the counter
+        unicount += 1;
+      }
+    }
+
+    // only show the navbar brand when intro logo is out of sight
+    if (!$('#logo').visible(true)) {
+      $('#brand').addClass('needed');
+    } else {
+      $('#brand').removeClass('needed');
+    }
+
+  });
 
 });
