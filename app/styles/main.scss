@@ -9,6 +9,13 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 $main-bg: #1c1e29;
 $main-light: #fdf6e3; // solarized base3
 $main-light-alt: #eee8d5;
+$features-1: lighten(#b58900, 10%); // solarized yellow
+$features-2: lighten(#cb4b16, 10%); // solarized orange
+$features-3: lighten(#d33682, 10%); // solarized magenta
+$features-4: lighten(#6c71c4, 10%); // solarized violet
+$features-5: lighten(#2aa198, 10%); // solarized cyan
+$features-6: lighten(#859900, 10%); // solarized green
+
 
 .browsehappy {
   margin: 0.2em 0;
@@ -99,6 +106,45 @@ section.main {
   top: 36%;
   right: 20%;
   transform: rotate(33deg);
+}
+
+// features
+
+#features .container-fluid {
+  padding: 5em 0;
+  border-width: 2em;
+  border-top-style: dashed;
+}
+#features .container-fluid.first-feature:first-child {
+  border-top-color: $main-bg;
+}
+#features .container-fluid:nth-child(6n+1) {
+  background-color: $features-1;
+  border-top-color: $features-6;
+}
+#features .container-fluid:nth-child(6n+2) {
+  background-color: $features-2;
+  border-top-color: $features-1;
+}
+#features .container-fluid:nth-child(6n+3) {
+  background-color: $features-3;
+  border-top-color: $features-2;
+}
+#features .container-fluid:nth-child(6n+4) {
+  background-color: $features-4;
+  border-top-color: $features-3;
+}
+#features .container-fluid:nth-child(6n+5) {
+  background-color: $features-5;
+  border-top-color: $features-4;
+}
+#features .container-fluid:nth-child(6n+6) {
+  background-color: $features-6;
+  border-top-color: $features-5;
+}
+#features .container-fluid:last-child {
+  border-bottom-style: dashed;
+  border-bottom-color: $main-bg;
 }
 
 // for larger screens
