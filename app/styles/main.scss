@@ -13,12 +13,17 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  background-color: #1c1e29;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2em;
 }
 
-body {
-  background-color: #1c1e29;
+#logo {
+  font-family: 'Orbitron', sans-serif;
+}
+h1 {
+  font-size: 4em;
 }
 
 .navbar {
@@ -26,3 +31,7 @@ body {
   border: 0;
 }
 
+section.main {
+  margin: 10% auto;
+  text-align: center;
+}
