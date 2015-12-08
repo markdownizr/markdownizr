@@ -34,6 +34,8 @@ $(document).ready(function() {
       if ($('#demo').visible(true)) {
         // hold a sec and start the show
         setTimeout(animateSecret, 4000);
+        // bump the counter
+        unicount += 1;
       }
     }
   });
