@@ -61,6 +61,20 @@ h1 {
   color: darken($main-light-alt, 10%);
 }
 
+.navbar-default .navbar-toggle {
+  border: 0;
+  color: $main-light;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  color: $main-light-alt;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border: 0;
+}
+
 #logo {
   position: relative;
   display: inline;
