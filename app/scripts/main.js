@@ -46,7 +46,6 @@ $(document).ready(function() {
     if ( $(this).attr('href').indexOf('#') === 0 ) {
       e.preventDefault();
       var target = $(this).attr('href');
-      console.log(target);
       $('html, body').animate({
         scrollTop: $(target).offset().top - 50
       }, 400, 'linear');
