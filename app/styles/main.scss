@@ -64,6 +64,8 @@ h1 {
 .navbar-default .navbar-toggle {
   border: 0;
   color: $main-light;
+  margin-right: .5em;
+  line-height: 2;
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
@@ -114,6 +116,30 @@ h1 {
   left: 3.7%;
   top: 40%;
 }
+
+#brand {
+  position: relative;
+  display: inline;
+  font-size: 2em;
+  display: inline-block;
+  margin-left: .5em;
+}
+
+#brand i {
+  position: absolute;
+}
+
+#brand i.fa-code {
+  font-size: .25em;
+  left: 4.5%;
+}
+
+#brand i.fa-angle-double-down {
+  font-size: .6em;
+  left: 3.7%;
+  top: 40%;
+}
+
 
 #intro h2, #intro p {
   @include slideInUp(
@@ -226,5 +252,8 @@ section.main {
   }
   h1 {
     font-size: 4em;
+  }
+  #brand {
+    display: none;
   }
 }
