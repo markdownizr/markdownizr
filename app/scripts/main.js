@@ -28,13 +28,18 @@ $(document).ready(function() {
   }
 
 // nice nav scrolling
-  $('#navbar a').on('click', function(e) {
+  $('.navbar.navbar-default a').on('click', function(e) {
+    var link = $(this).attr('href');
     // check if it's a local anchor
-    if ( $(this).attr('href').indexOf('#') === 0 ) {
+    if ( link.length > 1 && link.indexOf('#') === 0 ) {
       e.preventDefault();
       var target = $(this).attr('href');
       $('html, body').animate({
         scrollTop: $(target).offset().top - 70
+      }, 400, 'linear');
+    } else if ( link.length === 1 && link.indexOf('#') === 0 ) {
+      $('html, body').animate({
+        scrollTop: 0
       }, 400, 'linear');
     }
   });
