@@ -3,6 +3,12 @@ $fa-font-path: "../bower_components/components-font-awesome/fonts";
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import "bower_components/components-font-awesome/scss/font-awesome.scss";
+@import
+  "bower_components/animatewithsass/_properties",
+  "bower_components/animatewithsass/_attention-seekers/attention-seekers.scss",
+  "bower_components/animatewithsass/_bouncing-entrances/bouncing-entrances.scss",
+  "bower_components/animatewithsass/_sliding-entrances/sliding-entrances.scss";
+
 // endbower
 
 // Vars
@@ -64,6 +70,26 @@ h1 {
   position: absolute;
 }
 
+#logo {
+  @include bounceInDown(
+    $duration: 1s,
+    $count: 1,
+    $delay: .5s,
+    $function: ease,
+    $fill: both
+  );
+}
+
+#logo:hover i {
+  @include tada(
+    $duration: 1s,
+    $count: 1,
+    $delay: .1s,
+    $function: ease,
+    $fill: both
+  );
+}
+
 #logo i.fa-code {
   font-size: .25em;
   left: 4.5%;
@@ -73,6 +99,16 @@ h1 {
   font-size: .6em;
   left: 3.7%;
   top: 40%;
+}
+
+#intro h2, #intro p {
+  @include slideInUp(
+    $duration: .5s,
+    $count: 1,
+    $delay: .5s,
+    $function: ease,
+    $fill: both
+  );
 }
 
 section.main {
