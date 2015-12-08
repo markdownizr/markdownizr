@@ -46,7 +46,12 @@ h1 {
   color: $main-light;
 }
 
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: darken($main-light-alt, 10%);
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  background: $main-bg;
   color: darken($main-light-alt, 10%);
 }
 
