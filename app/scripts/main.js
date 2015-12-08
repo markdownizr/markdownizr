@@ -38,5 +38,19 @@ $(document).ready(function() {
     }
   });
 
+// nice nav scrolling
+  $('#navbar a').on('click', function(e) {
+    // check if it's a local anchor
+    if ( $(this).attr('href').indexOf('#') === 0 ) {
+      e.preventDefault();
+      var target = $(this).attr('href');
+      console.log(target);
+      $('html, body').animate({
+        scrollTop: $(target).offset().top - 50
+      }, 400, 'linear');
+    }
+  });
+
+
 
 });
