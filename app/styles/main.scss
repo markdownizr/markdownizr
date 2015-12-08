@@ -147,6 +147,20 @@ section.main {
   border-bottom-color: $main-bg;
 }
 
+// secret unicorn
+
+#secret {
+  background-color: transparent;
+  position: fixed;
+  right: -100%;
+  top: -100%;
+  z-index: 100;
+  color: red;
+  font-size: 5em;
+  transform: rotate(-25deg);
+  font-family: 'Orbitron';
+}
+
 // for larger screens
 @media(min-width:48em){
   .feature-description {
