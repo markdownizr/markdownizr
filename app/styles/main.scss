@@ -43,6 +43,26 @@ h1 {
   color: darken($main-light-alt, 10%);
 }
 
+#logo {
+  position: relative;
+  display: inline;
+}
+
+#logo i {
+  position: absolute;
+}
+
+#logo i.fa-code {
+  font-size: .25em;
+  left: 4.5%;
+}
+
+#logo i.fa-angle-double-down {
+  font-size: .6em;
+  left: 3.7%;
+  top: 40%;
+}
+
 section.main {
   margin: 10% auto;
   text-align: center;
