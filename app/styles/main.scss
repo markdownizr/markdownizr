@@ -22,12 +22,12 @@ body {
   background-color: $main-bg;
   color: $main-light;
   font-family: 'Open Sans', sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 h1 {
   font-family: 'Orbitron', sans-serif;
-  font-size: 4em;
+  font-size: 3em;
 }
 
 .navbar, footer {
@@ -50,12 +50,6 @@ section.main {
 
 .feature-icon i {
   font-size: 5em;
-}
-
-@media(min-width:48em){
-  .feature-description {
-    text-align: left;
-  }
 }
 
 #demo textarea {
@@ -85,4 +79,17 @@ section.main {
   top: 36%;
   right: 20%;
   transform: rotate(33deg);
+}
+
+// for larger screens
+@media(min-width:48em){
+  .feature-description {
+    text-align: left;
+  }
+  body {
+    font-size: 2em;
+  }
+  h1 {
+    font-size: 4em;
+  }
 }
