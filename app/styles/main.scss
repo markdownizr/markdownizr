@@ -2,7 +2,13 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/components-font-awesome/scss/font-awesome.scss";
 // endbower
+
+// Vars
+$main-bg: #1c1e29;
+$main-light: #fdf6e3; // solarized base3
+$main-light-alt: #eee8d5;
 
 .browsehappy {
   margin: 0.2em 0;
@@ -13,25 +19,70 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
 /* Space out content a bit */
 body {
-  background-color: #1c1e29;
-  color: white;
+  background-color: $main-bg;
+  color: $main-light;
   font-family: 'Open Sans', sans-serif;
   font-size: 2em;
 }
 
-#logo {
-  font-family: 'Orbitron', sans-serif;
-}
 h1 {
+  font-family: 'Orbitron', sans-serif;
   font-size: 4em;
 }
 
-.navbar {
-  background-color: transparent;
+.navbar, footer {
+  background-color: lighten($main-bg, 10%);
   border: 0;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $main-light;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: darken($main-light-alt, 10%);
 }
 
 section.main {
   margin: 10% auto;
   text-align: center;
+}
+
+.feature-icon i {
+  font-size: 5em;
+}
+
+@media(min-width:48em){
+  .feature-description {
+    text-align: left;
+  }
+}
+
+#demo textarea {
+  width: 100%;
+  height: 30em;
+  background-color: transparent;
+  padding: 1em;
+  position: relative;
+}
+
+.text-background {
+   position: absolute;
+   z-index: 1;
+   overflow: hidden;
+   opacity: .2;
+   font-family: 'Orbitron', sans-serif;
+   font-size: 5em;
+}
+
+.text-background.html {
+  top: 30%;
+  left: 20%;
+  transform: rotate(-33deg);
+}
+
+.text-background.md {
+  top: 36%;
+  right: 20%;
+  transform: rotate(33deg);
 }
