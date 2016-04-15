@@ -8,6 +8,15 @@ var settings = new Store("settings", {
   "readability_api_key": ""
 });
 
+// instantiate a context menu (right click)
+chrome.runtime.onInstalled.addListener(function() {
+    chrome.contextMenus.create({
+      title: "Get Markdown",
+      id: "getMarkdown",
+      contexts: ["page", "selection"]
+    });
+});
+
 // create easy vars to use in the magic below
 var stripped_elements = settings.get("strip_elements").split(', ');
 var deleted_elements = settings.get("delete_elements").split(', ');
@@ -16,13 +25,22 @@ function callTab(tab) {
   // Send a message to the active tab
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     var activeTab = tabs[0];
-    chrome.tabs.sendMessage(activeTab.id, {"message": "clicked_browser_action"});
+    chrome.tabs.sendMessage(activeTab.id, {"message": "wants_markdown"});
   });
 }
 // Called when the user clicks on the browser action.
 chrome.browserAction.onClicked.addListener(function(tab) {
-  callTab();
+  callTab(tab);
 });
+
+// Called when the user clicks on the context menu action.
+chrome.contextMenus.onClicked.addListener(function(info, tab) {
+    if (info.menuItemId === "getMarkdown") {
+        callTab(tab);
+    }
+});
+
+
 
 // check the message from content.js
 chrome.runtime.onMessage.addListener(
