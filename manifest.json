@@ -42,5 +42,8 @@
     "clipboardWrite",
     "contextMenus",
     "http://*/*"
+  ],
+  "web_accessible_resources": [
+    "success_message.html"
   ]
 }
