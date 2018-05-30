@@ -29,7 +29,7 @@ chrome.runtime.onMessage.addListener(
 
       // function for showing the user what happened in markdownizr land
       function statusMessage(status) {
-        console.log("status func called");
+        // console.log("status func called");
         $("#markdownizr-status").css({
           "display": "none",
           "color": "white",
@@ -52,7 +52,7 @@ chrome.runtime.onMessage.addListener(
         if (status == "success") {
           $("#markdownizr-status").text("Markdown Copied To Clipboard");
         } else {
-          $("#markdownizr-status").text("Oops! Please Try Again");
+          $("#markdownizr-status").text("Oops! Something went wrong.");
         }
         // tell the status div to make an appearance, then leave
         $( "#markdownizr-status" ).fadeIn(500).delay(1500);
