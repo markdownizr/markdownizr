@@ -20,9 +20,15 @@ div.tab-content {
 
 /* style logo */
 .logo-container {
-  position: absolute;
-  right: 42px;
-  top: 9px;
+  display: none;
+}
+@media screen and (min-width: 530px) {
+  .logo-container {
+    display: block;
+    position: absolute;
+    right: 42px;
+    top: 9px;
+  }
 }
 
 #logo {
@@ -47,7 +53,7 @@ body {
 }
 
 p.description {
-  font-size: 1em;
+  font-size: 1.3em;
 }
 
 body .setting.group-name {
@@ -87,6 +93,7 @@ body .setting.bundle {
 
 /* form controls */
 body textarea {
+  width: 100%;
   height: 5em;
 }
 
