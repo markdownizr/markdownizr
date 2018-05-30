@@ -33,9 +33,11 @@ chrome.runtime.onMessage.addListener(
         $("#markdownizr-status").css({
           "display": "none",
           "color": "white",
-          "font-family": "sans-serif",
+          "font-family": "monospace",
           "font-size": "24px",
+          "text-align": "center",
           "width": "20%",
+          "min-width": "240px",
           "background": "rgba(0, 0, 0, .5)",
           "border-radius": "10px",
           "padding": "1em",
