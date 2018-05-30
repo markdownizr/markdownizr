@@ -86,6 +86,10 @@ body .setting.bundle {
 }
 
 /* form controls */
+body textarea {
+  height: 5em;
+}
+
 body input[type=text], body input[type=password], body textarea {
   background: #1c1e29;
   border: none;

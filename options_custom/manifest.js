@@ -6,7 +6,7 @@ this.manifest = {
             "tab": "Options",
             "group": "Strip Elements",
             "name": "strip_elements",
-            "type": "text",
+            "type": "textarea",
             "text": "script, nav, p, ..."
         },
         {
@@ -20,7 +20,7 @@ this.manifest = {
             "tab": "Options",
             "group": "Delete Elements",
             "name": "delete_elements",
-            "type": "text",
+            "type": "textarea",
             "text": "script, nav, p, ..."
         },
         {
