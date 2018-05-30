@@ -1,6 +1,6 @@
 this.manifest = {
     "name": "Markdownizr",
-    "icon": "icon.png",
+    "icon": "favicon.ico",
     "settings": [
         {
             "tab": "Options",

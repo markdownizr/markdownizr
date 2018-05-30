@@ -2,3 +2,95 @@
 // Add your own style rules here, not in css/main.css
 // or css/setting.css for easy updating reasons.
 */
+
+/* hide sidebar and adjust layout */
+#sidebar {
+  display: none;
+}
+
+/* remove abs positioning and fixed width */
+#content, .tab-content {
+  position: static;
+  width: auto;
+}
+
+div.tab-content {
+  padding: 0;
+}
+
+/* style logo */
+.logo-container {
+  position: absolute;
+  right: 42px;
+  top: 24px;
+}
+
+#logo {
+  width: 330px;
+  margin-bottom: 20px;
+}
+
+/* typography and colors */
+body {
+  font-family: 'Open Sans', sans-serif;
+  /* background: #1c1e29; */
+  background: #313447;
+  color: #fdf6e3;
+}
+
+.tab-content h2 {
+  font-family: Orbitron,sans-serif;
+  color: #fdf6e3;
+  padding-left: 31px;
+  line-height: 2;
+  padding-top: 10px;
+}
+
+p.description {
+  font-size: 1em;
+}
+
+body .setting.group-name {
+  font-size: 1.7em;
+  text-align: right;
+  padding-right: 1em;
+}
+
+/* opt groups (tables) */
+body .setting.group {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+table.setting:nth-of-type(1) {
+  background: #e8632c;
+  border: none;
+  border-top: 2em dashed #313440;
+}
+
+table.setting:nth-of-type(2) {
+  background-color: #dc609c;
+  border: none;
+  border-top: 2em dashed #e8632c;
+}
+
+table.setting:last-child {
+  border-bottom: 2em dashed #313440;
+}
+
+body td {
+  padding: 4px 42px 4px 5px;
+}
+
+body .setting.bundle {
+  max-width: 410px;
+}
+
+/* form controls */
+body input[type=text], body input[type=password], body textarea {
+  background: #1c1e29;
+  border: none;
+  padding: 1em;
+  color: #fdf6e3;
+  font-family: monospace;
+  font-size: 1.6em;
+}
