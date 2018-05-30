@@ -30,26 +30,5 @@ this.manifest = {
             "type": "description",
             "text": "These elements will **and their contents** will be removed from the generated markdown."
         },
-        {
-            "tab": "Pro Features",
-            "group": "Readability",
-            "name": "enable_readability",
-            "type": "checkbox",
-        },
-        {
-            "tab": "Pro Features",
-            "group": "Readability",
-            "name": "readability_api_key",
-            "type": "text",
-            "text": "XXXXXXXXXXXXXXXX",
-            "masked": true
-        },
-        {
-            "tab": "Pro Features",
-            "group": "Readability",
-            "name": "readability_desc",
-            "type": "description",
-            "text": "Enter your Parser API Key from <a href='https://www.readability.com/developers/api'>Readability</a>."
-        }
     ]
 };
