@@ -7,7 +7,8 @@ this.manifest = {
             "group": "Strip Elements",
             "name": "strip_elements",
             "type": "textarea",
-            "text": "script, nav, p, ..."
+            "text": "script, nav, p, ...",
+            "default": "div, span, small, aside, section, article, header, time, address"
         },
         {
             "tab": "Options",
@@ -21,7 +22,8 @@ this.manifest = {
             "group": "Delete Elements",
             "name": "delete_elements",
             "type": "textarea",
-            "text": "script, nav, p, ..."
+            "text": "script, nav, p, ...",
+            "default": "script, noscript, canvas, embed, object, param, svg, source, form, nav, iframe, footer, hgroup"
         },
         {
             "tab": "Options",
