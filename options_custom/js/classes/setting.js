@@ -572,7 +572,6 @@
 
             if (this.params.default !== undefined) {
                 this.element.set("data-default", this.params.default);
-                console.log(this.params.default);
             }
 
             this.element.inject(this.container);

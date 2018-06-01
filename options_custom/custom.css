@@ -105,3 +105,18 @@ body input[type=text], body input[type=password], body textarea {
   font-family: monospace;
   font-size: 1.6em;
 }
+
+.reset-wrapper {
+  width: 100%;
+  text-align: center;
+}
+button {
+  padding: 10px;
+  background: transparent;
+  border: 2px solid #fdf6e3;
+  color: #fdf6e3;
+}
+
+#reset {
+  margin: 2em auto;
+}

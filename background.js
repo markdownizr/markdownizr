@@ -2,8 +2,8 @@
 
 // instantiate default settings
 var settings = new Store("settings", {
-  "strip_elements": "div, span, small, aside, section, article, header, footer, hgroup, time, address",
-  "delete_elements": "script, noscript, canvas, embed, object, param, svg, source, nav, iframe",
+  "strip_elements": "div, span, small, aside, section, article, header, footer, hgroup, time, address, button",
+  "delete_elements": "script, noscript, canvas, embed, object, param, svg, source, nav, iframe, details"
 });
 
 // instantiate a context menu (right click)
@@ -51,7 +51,7 @@ chrome.runtime.onMessage.addListener(
         converters: [{
           // grab the settings
           filter: stripped_elements,
-          replacement: function (innerHTML) { return innerHTML }
+          replacement: function (innerHTML, node) { return innerHTML }
         }, {
           // don't include these in the final markdown
           filter: deleted_elements,
