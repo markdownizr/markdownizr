@@ -1,4 +1,4 @@
-// localStorage.clear(); // for debugging
+// localStorage.clear(); // bust cached settings
 
 // instantiate default settings
 var settings = new Store("settings", {
