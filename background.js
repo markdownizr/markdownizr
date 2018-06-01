@@ -2,8 +2,8 @@
 
 // instantiate default settings
 var settings = new Store("settings", {
-  "strip_elements": "div, span, small, aside, section, article, header, time, address",
-  "delete_elements": "script, noscript, canvas, embed, object, param, svg, source, nav, iframe, footer, hgroup",
+  "strip_elements": "div, span, small, aside, section, article, header, footer, hgroup, time, address",
+  "delete_elements": "script, noscript, canvas, embed, object, param, svg, source, nav, iframe",
 });
 
 // instantiate a context menu (right click)
