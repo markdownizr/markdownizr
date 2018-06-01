@@ -45,5 +45,6 @@
   ],
   "web_accessible_resources": [
     "success_message.html"
-  ]
+  ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }
