@@ -1,4 +1,4 @@
-# Markdownizr 🍻
+# Markdownizr
 
 Markdownizr is a Google Chrome browser extension for copying markdown from web
 pages. It was conceived and mostly coded on a warm winter night in California in

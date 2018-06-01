@@ -3,9 +3,7 @@
 // instantiate default settings
 var settings = new Store("settings", {
   "strip_elements": "div, span, small, aside, section, article, header, time, address",
-  "delete_elements": "script, noscript, canvas, embed, object, param, svg, source, form, nav, iframe, footer, hgroup",
-  "enable_readability": true,
-  "readability_api_key": ""
+  "delete_elements": "script, noscript, canvas, embed, object, param, svg, source, nav, iframe, footer, hgroup",
 });
 
 // instantiate a context menu (right click)
