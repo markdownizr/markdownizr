@@ -5,7 +5,7 @@ pages. It was conceived and mostly coded on a warm winter night in California in
 2015.
 
 Learn more at
-[http://sh78.github.io/markdownizr/](http://sh78.github.io/markdownizr/).
+[https://www.sean.sh/markdownizr](https://www.sean.sh/markdownizr).
 
 ## License
 
