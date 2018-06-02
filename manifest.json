@@ -2,7 +2,7 @@
   "name": "Markdownizr",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Grab page content as markdown.",
+  "description": "Copy website page content as clean Markdown.",
   "homepage_url": "http://markdownizr.com",
   "icons": {
     "16": "icons/icon16.png",
