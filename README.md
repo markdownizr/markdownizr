@@ -6,3 +6,14 @@ pages. It was conceived and mostly coded on a warm winter night in California in
 
 Learn more at
 [http://sh78.github.io/markdownizr/](http://sh78.github.io/markdownizr/).
+
+## License
+
+<p xmlns:dct="http://purl.org/dc/terms/">
+<a rel="license" href="http://creativecommons.org/publicdomain/mark/1.0/">
+<img src="http://i.creativecommons.org/p/mark/1.0/88x31.png"
+     style="border-style: none;" alt="Public Domain Mark" />
+</a>
+<br />
+This work (<span property="dct:title">Markdownizr</span>, by <a href="https://markdownizr.com/" rel="dct:creator"><span property="dct:title">Sean Henderson</span></a>), identified by <a href="https://www.sean.sh/" rel="dct:publisher"><span property="dct:title">Sean Henderson</span></a>, is free of known copyright restrictions.
+</p>
