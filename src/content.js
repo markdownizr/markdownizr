@@ -2,40 +2,21 @@
   // Tell the user if the Markdownization succeeded or failed
   function informUI(status) {
     // Create a special div, just for markdownizr status updates
-    $('body').append("<div id='markdownizr-status'></div>")
+    const markdownizrStatusEl = document.createElement('div')
+    markdownizrStatusEl.id = 'markdownizr-status'
+    document.body.appendChild(markdownizrStatusEl)
 
-    // console.log("status func called");
-    $('#markdownizr-status').css({
-      display: 'none',
-      color: 'white',
-      'font-family': 'monospace',
-      'font-size': '24px',
-      'text-align': 'center',
-      width: '20%',
-      'min-width': '240px',
-      background: 'rgba(0, 0, 0, .5)',
-      'border-radius': '10px',
-      padding: '1em',
-      position: 'fixed',
-      'z-index': '100000000', // a trillion
-      // center it
-      left: '50%',
-      top: '20%',
-      'margin-left': '-10%', // Negative half of width
-    })
     // set the prose in the div depending on $argv[0]
     if (status === 'success') {
-      $('#markdownizr-status').text('Markdown Copied To Clipboard')
+      markdownizrStatusEl.textContent = 'Markdown Copied To Clipboard'
     } else {
-      $('#markdownizr-status').text('Oops! Something went wrong.')
+      markdownizrStatusEl.textContent = 'Oops! Something went wrong.'
     }
-    // tell the status div to make an appearance, then leave
-    $('#markdownizr-status')
-      .fadeIn(500)
-      .delay(1500)
-      .fadeOut(500, function () {
-        $(this).remove()
-      })
+    // Tell the status div to make an appearance, then leave
+    markdownizrStatusEl.classList.add('show')
+    setTimeout(function () {
+      markdownizrStatusEl.classList.remove('show')
+    }, 1000)
   }
 
   // Listen for a message from background script asking for content to Markdownize

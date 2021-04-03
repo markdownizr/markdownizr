@@ -37,11 +37,6 @@ module.exports = (env, argv) => {
             from: 'node_modules/webextension-polyfill/dist/browser-polyfill.js',
             to: 'vendor/[name][ext]',
           },
-          // TODO: replace these deps with imported node_modules
-          {
-            from: 'src/bower_components/jquery/dist/jquery.js',
-            to: 'vendor/[name][ext]',
-          },
           {
             from: 'src/options_custom',
             to: 'options_custom',
@@ -51,7 +46,11 @@ module.exports = (env, argv) => {
             to: 'images/[name][ext]',
           },
           {
-            from: 'src/background.html',
+            from: 'src/*.html',
+            to: '[name][ext]',
+          },
+          {
+            from: 'src/*.css',
             to: '[name][ext]',
           },
         ],
