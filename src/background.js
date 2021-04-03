@@ -82,6 +82,7 @@ import TurndownService from 'turndown'
       return (
         // This is an anchor element
         node.nodeName === 'A' &&
+        !node.textContent.length &&
         // Turndown is set to "inlined" link mode
         options.linkStyle === 'inlined' &&
         // The href is an internal fragment link
