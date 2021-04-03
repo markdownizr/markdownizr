@@ -1,0 +1,43 @@
+{
+  "name": "Markdownizr",
+  "version": "0.1.1",
+  "manifest_version": 2,
+  "description": "Copy website page content as clean Markdown.",
+  "homepage_url": "http://www.markdownizr.com",
+  "icons": {
+    "16": "./images/icon16.png",
+    "48": "./images/icon48.png",
+    "128": "./images/icon128.png"
+  },
+  "default_locale": "en",
+  "permissions": ["activeTab", "tabs", "clipboardWrite", "contextMenus"],
+  "options_page": "options_custom/index.html",
+  "options_ui": {
+    "page": "./options_custom/index.html"
+  },
+  "background": {
+    "scripts": [
+      "./vendor/jquery.js",
+      "./vendor/to-markdown.js",
+      "./options_custom/lib/store.js",
+      "./background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "./vendor/jquery.js",
+        "./vendor/to-markdown.js",
+        "./content.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "16": "./images/icon16.png",
+      "48": "./images/icon48.png",
+      "128": "./images/icon128.png"
+    }
+  }
+}

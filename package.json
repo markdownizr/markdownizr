@@ -1,0 +1,50 @@
+{
+  "name": "markdownizr",
+  "description": "Markdownizr is a Google Chrome browser extension for copying markdown from web pages. It was conceived and mostly coded on a warm winter night in California in 2015.",
+  "version": "0.1.0",
+  "main": "background.js",
+  "scripts": {
+    "test": "npm run webext:lint",
+    "lint": "web-ext lint --source-dir dist",
+    "dev": "npm-run-all --print-label --parallel watch:dev webext:run",
+    "start": "npm-run-all --print-label --parallel watch:prod webext:run",
+    "build": "npm-run-all --print-label --sequential build:prod webext:build webext:lint",
+    "watch:dev":  "webpack --watch --mode=development",
+    "watch:prod":  "webpack --watch --mode=production",
+    "build:dev":  "webpack --mode=development",
+    "build:prod":  "webpack --mode=production",
+    "webext:run": "web-ext run --source-dir dist",
+    "webext:build": "web-ext build --overwrite-dest --source-dir dist --artifacts-dir release",
+    "webext:lint": "web-ext lint --source-dir dist",
+    "webext:sign": "web-ext sign --source-dir dist --artifacts-dir release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sh78/markdownizr-chrome.git"
+  },
+  "keywords": [
+    "Markdown",
+    "Copy",
+    "Extension",
+    "Plugin",
+    "Browser",
+    "Chrome",
+    "Firefox"
+  ],
+  "author": "Sean Henderson <mail@sean.sh>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sh78/markdownizr-chrome/issues"
+  },
+  "homepage": "https://github.com/sh78/markdownizr-chrome#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^8.1.0",
+    "html-webpack-plugin": "^5.3.1",
+    "npm-run-all": "^4.1.5",
+    "path": "^0.12.7",
+    "webextension-polyfill": "^0.7.0",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0"
+  }
+}

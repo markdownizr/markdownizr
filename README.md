@@ -5,7 +5,14 @@ pages. It was conceived and mostly coded on a warm winter night in California in
 2015.
 
 Learn more at
-[https://www.sean.sh/markdownizr](https://www.sean.sh/markdownizr).
+[https://www.markdownizr.com](https://www.markdownizr.com).
+
+## Develop
+
+```sh
+npm install -g web-ext
+web-ext run
+```
 
 ## License
 
