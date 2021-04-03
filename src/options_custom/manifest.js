@@ -8,7 +8,7 @@ this.manifest = {
             "name": "keep_elements",
             "type": "textarea",
             "text": "div, span, table, del, etc",
-            "default": "table, small"
+            "default": ""
         },
         {
             "tab": "Options",

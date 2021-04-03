@@ -1,4 +1,5 @@
 import TurndownService from 'turndown'
+import { gfm } from 'joplin-turndown-plugin-gfm'
 
 // Uncomment to bust any cached settings while debugging
 // localStorage.clear();
@@ -24,7 +25,7 @@ import TurndownService from 'turndown'
    */
   const settings = new Store('settings', {
     // Render these elements into markdown output as HTML
-    keep_elements: 'table, small',
+    keep_elements: '',
     // Do not consider these elements when rendering markdown output
     delete_elements:
       'script, style, title, noscript, canvas, embed, object, param, svg, source, iframe',
@@ -42,18 +43,18 @@ import TurndownService from 'turndown'
   }
   let turndownService = new TurndownService(turndownOptions)
 
+  // Use GitHub Flavored Markdown Turndown plugin
+  // Fop better table and strikethrough support
+
+  // Use the gfm plugin
+  turndownService.use(gfm)
+
+  // Use the table and strikethrough plugins only
+  // turndownService.use([tables, strikethrough])
+
   // Apply settings for elements to keep and delete
   turndownService.remove(deleteElements)
   turndownService.keep(keepElements)
-
-  // Suport ~strikethrough~
-  // Taken from example at https://github.com/domchristie/turndown#methods
-  turndownService.addRule('strikethrough', {
-    filter: ['del', 's', 'strike'],
-    replacement: function (content) {
-      return '~' + content + '~'
-    },
-  })
 
   // Fence all <pre> elements
   // GitHub, for example, does not use <code> elements in their code blocks.
