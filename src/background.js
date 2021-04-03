@@ -154,6 +154,6 @@ import TurndownService from 'turndown'
 
     textarea.select()
     document.execCommand('Copy')
-    console.info('Copyied markdown value from textarea to clipboard.')
+    console.info('Copied markdown value from textarea to clipboard.')
   })
 })()
