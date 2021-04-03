@@ -28,7 +28,6 @@
         "./content.css"
       ],
       "js": [
-        "./vendor/jquery.js",
         "./content.js"
       ]
     }
