@@ -144,15 +144,14 @@ import TurndownService from 'turndown'
     // Put the markdown in a clandestine textarea inside background.html
     const textarea = document.createElement('textarea')
     textarea.id = `${Date.now()}`
-    console.log(textarea)
 
     console.info('Injecting markdown into textarea...')
     textarea.value = theMarkdown
     document.body.appendChild(textarea)
     console.log(textarea)
 
-    console.info('Copying markdown value from textarea...')
     textarea.select()
     document.execCommand('Copy')
+    console.info('Copyied markdown value from textarea to clipboard.')
   })
 })()
