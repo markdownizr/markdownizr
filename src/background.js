@@ -24,7 +24,7 @@ import TurndownService from 'turndown'
    */
   const settings = new Store('settings', {
     // Render these elements into markdown output as HTML
-    keep_elements: 'small',
+    keep_elements: 'table, small',
     // Do not consider these elements when rendering markdown output
     delete_elements:
       'script, style, title, noscript, canvas, embed, object, param, svg, source, iframe',
