@@ -43,10 +43,6 @@ module.exports = (env, argv) => {
             to: 'vendor/[name][ext]',
           },
           {
-            from: 'src/bower_components/to-markdown/dist/to-markdown.js',
-            to: 'vendor/[name][ext]',
-          },
-          {
             from: 'src/options_custom',
             to: 'options_custom',
           },

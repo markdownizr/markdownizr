@@ -5,7 +5,6 @@
     > was found in the WebExtension manifest.
 - [ ] Rewrite jQuery to Vanilla™ JavaScript
 - [ ] Use more dynamic values in Webpack config
-- [ ] Update to Turndown https://github.com/domchristie/turndown/wiki/Migrating-from-to-markdown-to-Turndown
 - [ ] Refine filters
     - [ ] Remove empty elements
     - [ ] Make id's persist in headlines

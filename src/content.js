@@ -1,7 +1,7 @@
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
 
-    if (request.message === "wants_markdown") {
+    if (request.message === "markdown_pls") {
       // get url of the current url
       var page_location = window.location.href;
       // get selection
