@@ -1,17 +1,19 @@
 # Markdownizr
 
-Markdownizr is a Google Chrome browser extension for copying markdown from web
-pages. It was conceived and mostly coded on a warm winter night in California in
-2015.
+Markdownizr is a browser extension for copying markdown from web pages. It was
+conceived and mostly coded on a warm winter night in California in 2015.
 
-Learn more at
-[https://www.markdownizr.com](https://www.markdownizr.com).
+The extension has been tested in Chrome and Firefox. It should be compatible
+with any browser supporting the [WebExtensions
+APIs](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs).
+
+Learn more at [https://www.markdownizr.com](https://www.markdownizr.com).
 
 ## Develop
 
 ```sh
-npm install -g web-ext
-web-ext run
+npm install
+npm run dev
 ```
 
 ## License
