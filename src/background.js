@@ -20,6 +20,19 @@ import TurndownService from 'turndown'
     console.log(`%c${m}`, 'font-size: 12px; font-family: serif')
 
   /**
+   * Default user settings
+   */
+  const settings = new Store('settings', {
+    // Render these elements into markdown output as HTML
+    keep_elements: 'small',
+    // Do not consider these elements when rendering markdown output
+    delete_elements:
+      'script, style, title, noscript, canvas, embed, object, param, svg, source, iframe',
+  })
+  const keepElements = settings.get('keep_elements').split(', ')
+  const deleteElements = settings.get('delete_elements').split(', ')
+
+  /**
    * Markdown service
    */
   const turndownOptions = {
@@ -28,6 +41,10 @@ import TurndownService from 'turndown'
     hr: '----------',
   }
   let turndownService = new TurndownService(turndownOptions)
+
+  // Apply settings for elements to keep and delete
+  turndownService.remove(deleteElements)
+  turndownService.keep(keepElements)
 
   // Suport ~strikethrough~
   // Taken from example at https://github.com/domchristie/turndown#methods
@@ -75,21 +92,6 @@ import TurndownService from 'turndown'
       return `[#](${node.getAttribute('href')})`
     },
   })
-
-  /**
-   * Default user settings
-   * TODO: do we need these anymore? Turndown seems to be taking care of
-   * cleaning up the results with its defaults
-   * If not, they should be removed from the user settings options
-   */
-  // const settings = new Store('settings', {
-  //   strip_elements:
-  //     'div, span, small, aside, section, article, header, footer, hgroup, time, address, button',
-  //   delete_elements:
-  //     'script, noscript, canvas, embed, object, param, svg, source, nav, iframe, details',
-  // })
-  // const stripped_elements = settings.get('strip_elements').split(', ')
-  // const deleted_elements = settings.get('delete_elements').split(', ')
 
   // a context menu (right click)
   chrome.runtime.onInstalled.addListener(function () {
