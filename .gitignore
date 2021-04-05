@@ -1,4 +1,5 @@
 dist
+.parcel-cache
 .tmp
 bower_components
 node_modules
