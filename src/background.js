@@ -1,6 +1,6 @@
 // const browser = require("webextension-polyfill");
 import OptionsSync from 'webext-options-sync'
-import TurndownService from 'turndown'
+import TurndownService from 'joplin-turndown'
 import { gfm } from 'joplin-turndown-plugin-gfm'
 
 // Uncomment to bust any cached settings while debugging

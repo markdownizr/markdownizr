@@ -22,8 +22,8 @@
     "Firefox"
   ],
   "dependencies": {
+    "joplin-turndown": "^4.0.30",
     "joplin-turndown-plugin-gfm": "^1.0.12",
-    "turndown": "^7.0.0",
     "webext-options-sync": "^2.0.1",
     "webextension-polyfill": "^0.7.0"
   },
