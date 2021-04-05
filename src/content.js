@@ -1,3 +1,5 @@
+// const browser = require("webextension-polyfill");
+
 ;(function () {
   // Tell the user if the Markdownization succeeded or failed
   function informUI(status) {

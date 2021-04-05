@@ -1,9 +1,11 @@
+// const browser = require("webextension-polyfill");
+import OptionsSync from 'webext-options-sync'
 import TurndownService from 'turndown'
 import { gfm } from 'joplin-turndown-plugin-gfm'
 
 // Uncomment to bust any cached settings while debugging
 // localStorage.clear();
-;(function () {
+;(async function () {
   /**
    * Check and set a global guard variable.
    * If this content script is injected into the same page again,
@@ -23,15 +25,17 @@ import { gfm } from 'joplin-turndown-plugin-gfm'
   /**
    * Default user settings
    */
-  const settings = new Store('settings', {
-    // Render these elements into markdown output as HTML
-    keep_elements: '',
-    // Do not consider these elements when rendering markdown output
-    delete_elements:
+  /* global OptionsSync */
+  const optionsStorage = new OptionsSync()
+
+  await optionsStorage.set({
+    keepElements: '',
+    deleteElements:
       'script, style, title, noscript, canvas, embed, object, param, svg, source, iframe',
   })
-  const keepElements = settings.get('keep_elements').split(', ')
-  const deleteElements = settings.get('delete_elements').split(', ')
+
+  const options = await optionsStorage.getAll()
+  const { keepElements, deleteElements } = options
 
   /**
    * Markdown service
@@ -53,8 +57,8 @@ import { gfm } from 'joplin-turndown-plugin-gfm'
   // turndownService.use([tables, strikethrough])
 
   // Apply settings for elements to keep and delete
-  turndownService.remove(deleteElements)
-  turndownService.keep(keepElements)
+  if (deleteElements.length) turndownService.remove(deleteElements.split(', '))
+  if (keepElements.length) turndownService.keep(keepElements.split(', '))
 
   // Fence all <pre> elements
   // GitHub, for example, does not use <code> elements in their code blocks.
@@ -117,12 +121,12 @@ import { gfm } from 'joplin-turndown-plugin-gfm'
   }
 
   // Listen for a click on the browser action (the plugin's toolbar icon)
-  chrome.browserAction.onClicked.addListener(function (tab) {
+  chrome.browserAction.onClicked.addListener(function () {
     askTabForMarkdown()
   })
 
   // Listen for the context (right-click) menu button being triggered
-  chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  chrome.contextMenus.onClicked.addListener(function (info) {
     // If the context menu option is angry, ask for the markdowns
     if (info.menuItemId === 'getMarkdown') {
       askTabForMarkdown()

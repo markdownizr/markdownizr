@@ -1,34 +1,6 @@
-/*
-// Add your own style rules here, not in css/main.css
-// or css/setting.css for easy updating reasons.
-*/
-
-/* hide sidebar and adjust layout */
-#sidebar {
-  display: none;
-}
-
-/* remove abs positioning and fixed width */
-#content, .tab-content {
-  position: static;
-  width: auto;
-}
-
-div.tab-content {
-  padding: 0;
-}
-
 /* style logo */
 .logo-container {
-  display: none;
-}
-@media screen and (min-width: 530px) {
-  .logo-container {
-    display: block;
-    position: absolute;
-    right: 42px;
-    top: 9px;
-  }
+  padding-left: 31px;
 }
 
 #logo {
@@ -106,17 +78,19 @@ body input[type=text], body input[type=password], body textarea {
   font-size: 1.6em;
 }
 
-.reset-wrapper {
+.button-wrapper {
   width: 100%;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  max-width: 20em;
+  margin: auto;
 }
 button {
+  margin-top: 20px;
   padding: 10px;
   background: transparent;
   border: 2px solid #fdf6e3;
   color: #fdf6e3;
 }
 
-#reset {
-  margin: 2em auto;
-}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Options</title>
+    <link rel="stylesheet" href="options.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Orbitron:900,700|Open+Sans:400,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <div class="logo-container">
+      <a href="https://www.markdownizr.com/" target="_blank">
+        <img id="logo" src="images/logo.png" />
+      </a>
+    </div>
+    <div class="content">
+      <div class="tab-content show">
+        <h2>Options</h2>
+        <form id="options-form">
+          <table class="setting group">
+            <tr>
+              <td class="setting group-name">Keep Elements</td>
+              <td class="setting group-content">
+                <div class="setting bundle textarea">
+                  <div class="setting container textarea">
+                    <textarea
+                      class="setting element textarea"
+                      name="keepElements"
+                      placeholder="div, span, table, del, etc"
+                      data-default=""
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="setting bundle description">
+                  <div class="setting container description">
+                    <p class="setting element description">
+                      These elements will be preserved as raw HTML in the
+                      generated markdownk
+                    </p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <table class="setting group">
+            <tr>
+              <td class="setting group-name">Delete Elements</td>
+              <td class="setting group-content">
+                <div class="setting bundle textarea">
+                  <div class="setting container textarea">
+                    <textarea
+                      class="setting element textarea"
+                      name="deleteElements"
+                      placeholder="script, noscript, canvas, etc"
+                      data-default="script, style, title, noscript, canvas, embed, object, param, svg, source, iframe"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="setting bundle description">
+                  <div class="setting container description">
+                    <p class="setting element description">
+                      These elements will
+                      <strong>and their contents</strong> will be removed from
+                      the generated markdown.
+                    </p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div class="button-wrapper">
+        <button id="submit" type="submit">Save</button
+        ><button id="reset">Reset To Default</button>
+      </div>
+    </div>
+  </body>
+  <script src="options-storage.js"></script>
+  <script src="options.js"></script>
+</html>
